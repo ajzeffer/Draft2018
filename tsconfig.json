@@ -1,0 +1,9 @@
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+        "target": "es6",
+        "outDir": "wwwroot/js",
+        "module": "commonjs",
+        "sourceMap": true
+    },
+}

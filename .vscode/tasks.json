@@ -4,7 +4,7 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build",
+            "label": "Build",
             "command": "dotnet build",
             "type": "shell",
             "group": "build",
@@ -14,16 +14,17 @@
             "problemMatcher": "$msCompile"
         },
         {
-            "label": "compile tsc",
+            "label": "Compile TSC",
             "type": "shell",
             "command": "tsc",
             "args": [
-                "--target", "ES5",
-                "--outDir", "wwwroot/js",
-                "--module", "commonjs",
+                "--target", "ES6",
+                //"--outDir", "wwwroot/js",
+                "--outFile", "wwwroot/js/app.js",
+                "--module", "amd",
                 "--sourceMap",
                 "--watch",
-                "src/app.ts"
+                "./src/app.ts"
             ],
             "problemMatcher": "$tsc",
             "group": {

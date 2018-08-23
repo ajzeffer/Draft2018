@@ -41,6 +41,7 @@ namespace FantasyDraft2018
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                
             }
             else
             {
@@ -49,6 +50,7 @@ namespace FantasyDraft2018
             }
 
             app.UseHttpsRedirection();
+            app.UseDefaultFiles();
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
