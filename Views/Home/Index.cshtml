@@ -2,8 +2,14 @@
     ViewData["Title"] = "Home Page";
 }
 <div class="row">
-    <div class="col-md-8">
-<table cellpadding="0" cellspacing="0" border="0" id="data" class="table table-bordered table-striped table-hover player-table tablesorter datatable">
+<div class="col-md-12"></div>
+    <h1>CFFL Draft</h1>
+    <h3>Current Pick: <span id="current-pick">1</span>
+    </h3>
+</div>
+<div class="row">
+    <div class="col-md-9">
+<table cellpadding="0" cellspacing="0" border="0" id="data" class="table table-bordered table-striped table-hover player-table tablesorter datatable display">
                         <thead>
                             <tr class="tablesorter-header">
                                 <th style="width:45px;" data-column="0" class="tablesorter-header tablesorter-headerSortDown"><div class="tablesorter-header-inner">Rank</div></th>
@@ -12,8 +18,8 @@
 <th style="width:48px;" data-column="3" class="tablesorter-header"><div class="tablesorter-header-inner">ESPN</div></th><th style="width:48px;" data-column="4" class="tablesorter-header"><div class="tablesorter-header-inner">MFL</div></th><th style="width:48px;" data-column="5" class="tablesorter-header"><div class="tablesorter-header-inner">FFC</div></th><th style="width:48px;" data-column="6" class="tablesorter-header"><div class="tablesorter-header-inner">RTSports</div></th><th style="width:48px;" data-column="7" class="tablesorter-header"><div class="tablesorter-header-inner">Fantrax</div></th><th style="width:48px;" data-column="8" class="tablesorter-header"><div class="tablesorter-header-inner">DW</div></th><th style="width:50px;" data-column="9" class="tablesorter-header"><div class="tablesorter-header-inner">AVG</div></th>
                              <th></th></tr>
                         </thead>
-                        <tbody class="">
-                                                    <tr><td>1</td>
+<tbody >
+<tr><td>1</td>
 <td class="player-label"><a class="player-name" href="/nfl/players/todd-gurley.php">Todd Gurley</a> <small>LAR</small> <small>(12)</small> <a href="#" class="fp-player-link fp-id-13912" fp-player-name="Todd Gurley" data-fp-id="13912"></a><div class="fp-icon__container"><a href="javascript:void(0)" class="fp-icon__link fp-id-13912 gb_loggedout fp-news-icon" title="View Player Card" data-fp-id="13912" data-fp-index="0"><span class="fp-icon__icon"></span></a><a href="javascript:void(0)" class="fp-icon__link fp-id-13912" title="Listen to Podcast" data-fp-id="13912"><span class="fp-icon__podcast"></span></a></div></td>
 <td>RB1</td><td>2</td>
 <td>1</td>
@@ -31,7 +37,9 @@
 <td>2</td>
 <td>&nbsp;</td>
 <td>1.8</td>
-<td><button class="remove">REMOVE</button><button class="add">ADD</button></td></tr><tr><td>3</td>
+<td><button class="remove">REMOVE</button><button class="add">ADD</button></td></tr>
+
+<tr><td>3</td>
 <td class="player-label"><a class="player-name" href="/nfl/players/ezekiel-elliott.php">Ezekiel Elliott</a> <small>DAL</small> <small>(8)</small> <a href="#" class="fp-player-link fp-id-15498" fp-player-name="Ezekiel Elliott" data-fp-id="15498"></a><div class="fp-icon__container"><a href="javascript:void(0)" class="fp-icon__link fp-id-15498 gb_loggedout fp-news-icon" title="View Player Card" data-fp-id="15498" data-fp-index="2"><span class="fp-icon__icon"></span></a><a href="javascript:void(0)" class="fp-icon__link fp-id-15498" title="Listen to Podcast" data-fp-id="15498"><span class="fp-icon__podcast"></span></a></div></td>
 <td>RB3</td><td>3</td>
 <td>3</td>
@@ -3787,7 +3795,7 @@
 <td><button class="remove">REMOVE</button><button class="add">ADD</button></td></tr></tbody>
                     </table>
                     </div>
-<div class="col-md-4">
+<div class="col-md-3">
     <div class="panel panel-default">
         <div class="panel-heading">
             <div class="panel-title">
@@ -3795,36 +3803,33 @@
                 </div>
         </div>
         <div class="panel-body">
-            <h2>QB</h2>
-            <ul id="qb-list">
-                <li><input type="text"/> </li>
-                <li><input type="text"/></li>
+            <h2>QB (<span id="QB-count"> </span>)</h2>
+            <ul id="QB-list">
             </ul>
-            <h2>RB</h2>
-            <ul id="rb-list">
-                <li><input type="text"/></li>
-                <li><input type="text"/></li>
-                <li><input type="text"/></li>
+            <h2>RB (<span id="RB-count"> </span>)</h2>
+            <ul id="RB-list">
             </ul>
-            <h2>WR</h2>
-            <ul id="wr-list">
-                <li><input type="text"/></li>
-                <li><input type="text"/></li>
-                <li><input type="text"/></li>
-                <li><input type="text"/></li>
+            <h2>WR (<span id="WR-count"> </span>)</h2>
+            <ul id="WR-list">
             </ul>
-            <h2>TE</h2>
-            <ul id="te-list">
-                <li><input type="text"/></li>
+            <h2>TE (<span id="TE-count"> </span>)</h2>
+            <ul id="TE-list">
             </ul>
-            <h2>K</h2>
+            <h2>K (<span id="K-count"> </span>)</h2>
             <ul id="k-list">
-                <li><input type="text"/></li>
             </ul>
-            <h2>DST</h2>
-            <ul id="dst-list">
-                <li><input type="text"/></li>
+            <h2>DST (<span id="DST-count"> </span>)</h2>
+            <ul id="DST-list">
             </ul>
         </div>
 </div>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        Drafted 
+        </div>
+        <div class="panel-body">
+            <ul id="drafted-order" class="list list-unstyled">
+                </ul>
+            </div>
 </div>
+</div></div>
