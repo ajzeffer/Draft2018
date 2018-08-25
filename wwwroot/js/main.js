@@ -1,6 +1,5 @@
 $(document).ready(function() {
   $(".table").DataTable();
-
   //.on('change','.backlink-update',(function (e) {
   $(".datatable").on("click", ".remove", function(e) {
     if (!confirm("Are You Sure You Want To Remove This Player?")) {
