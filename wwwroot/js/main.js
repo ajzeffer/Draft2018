@@ -1,5 +1,7 @@
 $(document).ready(function() {
-  $(".table").DataTable();
+  $("#data").DataTable({
+    "iDisplayLength": 500
+  });
   //.on('change','.backlink-update',(function (e) {
   $(".datatable").on("click", ".remove", function(e) {
     if (!confirm("Are You Sure You Want To Remove This Player?")) {
@@ -79,12 +81,30 @@ $(document).ready(function() {
     let currPick = getCurrentPickNumber();
     currPick = currPick + 1;
     currPickElem.innerText = currPick;
+    setPlayerValues();
   }
   function addToDrafted(playerName) {
     let draftOrder = $("#drafted-order");
     draftOrder.append(`<li>${playerName}</li>`);
   }
+
+  function setPlayerValues(){
+    var rows = $('#data > tbody > tr')
+    let currPick = getCurrentPickNumber();
+    for(let i = 0; i < rows.length; i++){
+      let elem= rows[i];
+      let td = elem.children[9];
+      let val = +td.innerText;
+      if(val > currPick) $(td).html(`<span class="label label-danger">${val}</span>`);
+      if(val < currPick) $(td).html(`<span class="label label-success">${val}</span>`);
+    }
+  }
+
+
 });
+
+
+
 $(window).bind("beforeunload", function() {
   return ">>>>>Before You Go<<<<<<<< \n Your custom message go here";
 });
